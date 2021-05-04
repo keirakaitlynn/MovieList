@@ -9,10 +9,10 @@ using MovieList.Models;
 
 namespace MovieList.Controllers
 {
-    public class HomeController : Controller
+    public class HomeKWController : Controller
     {
         private MovieContext context { get; set; }
-        public HomeController(MovieContext ctx)
+        public HomeKWController(MovieContext ctx)
         {
             context = ctx;
         }

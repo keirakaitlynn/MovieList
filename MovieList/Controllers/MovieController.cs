@@ -37,7 +37,7 @@ namespace MovieList.Controllers
                 else
                     context.Movies.Update(movie);
                 context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "HomeKW");
             }
             else
             {
@@ -56,7 +56,7 @@ namespace MovieList.Controllers
         {
             context.Movies.Remove(movie);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "HomeKW");
         }
     }
 }
