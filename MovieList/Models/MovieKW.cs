@@ -3,9 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MovieList.Models
 {
-    public class Movie
+    public class MovieKW
     {
         // EF will instruct the database to automatically generate this value
+        [Key]
         public int MovieId { get; set; }
 
         [Required(ErrorMessage = "Please enter a name.")]

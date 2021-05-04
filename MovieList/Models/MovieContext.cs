@@ -6,25 +6,25 @@ namespace MovieList.Models
         public MovieContext(DbContextOptions<MovieContext> options)
             : base(options)
         { }
-        public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieKW> Movies { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Movie>().HasData(
-                new Movie
+            modelBuilder.Entity<MovieKW>().HasData(
+                new MovieKW
                 {
                     MovieId = 4,
                     Name = "Casablanca",
                     Year = 1943,
                     Rating = 5,
                 },
-                new Movie
+                new MovieKW
                 {
                     MovieId = 2,
                     Name = "Wonder Woman",
                     Year = 2017,
                     Rating = 3,
                 },
-                new Movie
+                new MovieKW
                 {
                     MovieId = 3,
                     Name = "Moonstruck",

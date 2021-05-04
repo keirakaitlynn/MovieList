@@ -18,7 +18,7 @@ namespace MovieList.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
-            return View("Edit", new Movie());
+            return View("Edit", new MovieKW());
         }
         [HttpGet]
         public IActionResult Edit(int id)
@@ -28,21 +28,21 @@ namespace MovieList.Controllers
             return View(movie);
         }
         [HttpPost]
-        public IActionResult Edit(Movie movie)
+        public IActionResult Edit(MovieKW movieKw)
         {
             if (ModelState.IsValid)
             {
-                if (movie.MovieId == 0)
-                    context.Movies.Add(movie);
+                if (movieKw.MovieId == 0)
+                    context.Movies.Add(movieKw);
                 else
-                    context.Movies.Update(movie);
+                    context.Movies.Update(movieKw);
                 context.SaveChanges();
                 return RedirectToAction("IndexKW", "HomeKW");
             }
             else
             {
-                ViewBag.Action = (movie.MovieId == 0) ? "Add" : "Edit";
-                return View(movie);
+                ViewBag.Action = (movieKw.MovieId == 0) ? "Add" : "Edit";
+                return View(movieKw);
             }
         }
         [HttpGet]
@@ -52,9 +52,9 @@ namespace MovieList.Controllers
             return View(movie);
         }
         [HttpPost]
-        public IActionResult Delete(Movie movie)
+        public IActionResult Delete(MovieKW movieKw)
         {
-            context.Movies.Remove(movie);
+            context.Movies.Remove(movieKw);
             context.SaveChanges();
             return RedirectToAction("" +
                                     "Index" +
