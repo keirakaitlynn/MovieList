@@ -7771,7 +7771,9 @@ jQuery.each( [
 	"colSpan",
 	"useMap",
 	"frameBorder",
-	"contentEditable"
+	"content
+
+able"
 ], function() {
 	jQuery.propFix[ this.toLowerCase() ] = this;
 } );

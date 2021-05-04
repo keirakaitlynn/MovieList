@@ -18,17 +18,17 @@ namespace MovieList.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
-            return View("Edit", new MovieKW());
+            return View("EditKW", new MovieKW());
         }
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult EditKW(int id)
         {
-            ViewBag.Action = "Edit";
+            ViewBag.Action = "EditKW";
             var movie = context.Movies.Find(id);
             return View(movie);
         }
         [HttpPost]
-        public IActionResult Edit(MovieKW movieKw)
+        public IActionResult EditKW(MovieKW movieKw)
         {
             if (ModelState.IsValid)
             {
@@ -41,18 +41,18 @@ namespace MovieList.Controllers
             }
             else
             {
-                ViewBag.Action = (movieKw.MovieId == 0) ? "Add" : "Edit";
+                ViewBag.Action = (movieKw.MovieId == 0) ? "Add" : "EditKW";
                 return View(movieKw);
             }
         }
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteKW(int id)
         {
             var movie = context.Movies.Find(id);
             return View(movie);
         }
         [HttpPost]
-        public IActionResult Delete(MovieKW movieKw)
+        public IActionResult DeleteKW(MovieKW movieKw)
         {
             context.Movies.Remove(movieKw);
             context.SaveChanges();
