@@ -33,6 +33,5 @@ namespace MovieList.Models
                 }
             );
         }
-        public DbSet<Genre> Genres { get; set; }
     }
 }
