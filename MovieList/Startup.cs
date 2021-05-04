@@ -47,7 +47,9 @@ namespace MovieList
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=HomeKW}/{action=Index}/{id?}");
+                    pattern: "{controller=HomeKW}/{action=" +
+                             "IndexKW" +
+                             "}/{id?}");
             });
         }
     }

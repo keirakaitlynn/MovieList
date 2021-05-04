@@ -16,7 +16,7 @@ namespace MovieList.Controllers
         {
             context = ctx;
         }
-        public IActionResult Index()
+        public IActionResult IndexKW()
         {
             var movies = context.Movies.OrderBy(m => m.Name).ToList();
             return View(movies);
